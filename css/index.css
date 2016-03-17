@@ -37,7 +37,7 @@ address{font-style: normal;}
 
 .iqbar{max-width:1280px;width:100%; margin: 0 auto;}
 /*header*/
-header {background: #313f97;}
+header {background: #313f97;position: fixed;top:0;z-index:999;left:50%;transform:translateX(-50%)}
 .i_head {height: 58px; width:1000px; margin:0 auto;}
 .i_head img.logo{height: 39px;width: auto;margin:10px 0 0 11px;display: inline-block;}
 .i_head .login {float: right;height: 58px;width: 204px;}
@@ -48,8 +48,8 @@ header {background: #313f97;}
 .i_head .login a.sign_up{background-position:-114px top; }
 .i_head .login a.sign_up:hover {background-position:-114px -17px; }
 /*banner*/
-.banner{height: 648px;position: relative;overflow: hidden;text-align: center;}
-.banner_img {margin-top: -1px}
+.banner{height: 648px;position: relative;overflow: hidden;text-align: center;margin-top: 57px}
+.banner_img {}
 .banner_btn {position: absolute;bottom:173px;margin-left:50%;transform:translateX(-50%);}
 .banner_btn li{margin-right:5px;cursor:pointer;display: inline-block;height: 12px;width:12px;border:1px solid #fff;background: #fff;border-radius: 50%;}
 .banner_btn li.on{background:none;}
@@ -67,7 +67,7 @@ header {background: #313f97;}
 /*becom_main*/
 .becom_main {background: url(../images/be_come.png) no-repeat center top; height: 892px;padding-top:135px;}
 .become {width:1000px;margin:0 auto;}
-.become h2 {color:#fff;font-size: 44px;text-align: right;padding-right:10px;margin-bottom: 50px;}
+.become h2 {color:#fff;font-size: 44px;text-align: right;padding-right:10px;margin-bottom: 50px;line-height: 48px;}
 .condition {width:228px;margin:0 11px;height: 385px;border-radius: 20px;float: left;padding:0 18px;text-align: center;}
 .condition:nth-child(1) {background: #1eb9ee;}
 .condition:nth-child(2) {background: #f8b500;}
@@ -85,6 +85,24 @@ header {background: #313f97;}
 .condition a.play:hover{opacity: .7;}
 /*Complete*/
 .Complete{height: 1030px;background: url(../images/complete.png) center top;}
+.Complete_main {width:1000px;margin:0 auto;position: relative;}
+.Complete_main h2 {color:#313f97;font-size:44px;text-align: left;padding-left:10px;line-height: 48px;height:110px;}
+.Complete_main dl {width:489px;margin-left:65px;}
+.Complete_main dl dt{height: 30px;margin-top: 25px;position:relative;}
+.Complete_main dl dt h3{font-size: 20px;}
+.Complete_main dl dt span{display: inline-block;width: 48px;height: 48px;border-radius:50%;position: absolute;left:-60px;top:-15px;background:url(../images/complete_m.png);}
+.Complete_main dl dd p{font-weight: bold;color:#919191;line-height: 18px;margin-bottom: 10px;position: relative;padding-left:15px;}
+.Complete_main dl dd p:before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;position: absolute;left:0;top:5px;}
+.Complete_main dl:nth-child(2) dt span,
+.Complete_main dl:nth-child(2) dd p:before{background-color:#1eb9ee;background-position:left top;}
+.Complete_main dl:nth-child(3) dt span,
+.Complete_main dl:nth-child(3) dd p:before{background-color:#f8b500;background-position:left -48px;}
+.Complete_main dl:nth-child(4) dt span,
+.Complete_main dl:nth-child(4) dd p:before{background-color:#e95098;background-position:left -96px;}
+.Complete_main dl:nth-child(5) dt span,
+.Complete_main dl:nth-child(5) dd p:before{background-color:#313f97;background-position:left -144px;}
+.Complete_main span.play {display:block;position: absolute;top:340px;right:135px;cursor:pointer;opacity:.5;}
+.Complete_main span.play:hover {opacity:.56;}
 /*teach*/
 .list_teach {background: #ececec;height: 425px;padding-top: 48px;}
 .teach_box {width:1000px;margin:0 auto; height: 294px;}
@@ -116,3 +134,7 @@ footer {padding-top:44px;height: 223px;background:#ececec url(../images/footer_b
 .i_foot .share {display: inline-block;float: right; height: 46px;}
 .i_foot .share a{display: inline-block;height: 49px;width:49px;margin-left: 17px;}
 .i_foot .share a img{height: 49px;width:49px;display: block;}
+
+/*video*/
+.position{background:rgba(0,0,0,.5);position:fixed;height: 100%;width:100%;z-index:1000;top:0; display: none;}
+.video_box {height: 452px;width:728px;border-radius: 5px;background:#fff;left:50%;top:50%;position:absolute;transform:translate(-50%,-50%);}
