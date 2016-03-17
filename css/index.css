@@ -1,4 +1,4 @@
-
+@charset "utf-8";
 
 /*font*/
 @font-face{
@@ -59,7 +59,7 @@ header {background: #313f97;position: fixed;top:0;z-index:999;left:50%;transform
 .study_list {width: 50%;float: left; text-align: center;height:325px;} 
 .study_list dl{width:285px; margin:0 auto; height: 235px;} 
 .study_list dl dt{position: relative;height: 89px;margin-bottom: 5px;}  
-.study_list .pos{transition:all 0.25s ease;transform:translateY(-50%) scale(.5);height:89px;width:89px;background: url(../images/pos.png);position: absolute;top:0;left:98px; display: none;} 
+.study_list .pos{transition:all 0.25s ease;transform:translateY(-50%) scale(.5);height:89px;width:89px;background: url(../images/pos.png);position: absolute;top:0;left:98px; opacity: 0;} 
 .study_list .pos{fiter:alpha(opacity=0);} 
 .study_list a.Learn_more {font-size:14px;line-height:21px;width:90px;height: 21px;background: #f8b500;border-radius: 20px;display: inline-block;color: #fff;} 
 .learn_title {height: 56px;}
