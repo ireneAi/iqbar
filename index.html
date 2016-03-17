@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>iqbar home</title>
 	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link href="http://vjs.zencdn.net/5.8.0/video-js.css" rel="stylesheet">
 </head>
 <body>
 	<!-- header star -->
@@ -27,12 +28,12 @@
 	<!-- header end -->
 	<!-- banner star -->
 	<div class="iqbar banner">
-		<div class="banner_img">
+		<div id="Banner_list" class="banner_img">			
 			<img src="images/banner1.png">
 			<img src="images/banner2.png">
 			<img src="images/banner3.png">
 		</div>
-		<ul class="banner_btn">
+		<ul id="Banner_btn" class="banner_btn">
 			<li class="on"></li>
 			<li></li>
 			<li></li>
@@ -216,7 +217,7 @@
 					<p>Be awarded for your hard work!</p>
 				</dd>
 			</dl>
-			<span class="play" href="#">
+			<span id="btnPlay" class="play" href="#">
 				<img src="images/play.png">
 				<!-- 播放按钮 -->
 			</span>
@@ -226,11 +227,11 @@
 	<!-- 老师例表 star-->
 	<article class="iqbar list_teach">		
 		<div class="teach_box">
-			<div class="btn">
+			<div id="prevBtn" class="btn">
 				<img src="images/prev_btn.png">
 			</div>
 			<div class="teach_main">
-				<div class="teach_info">
+				<div id="teachBox" class="teach_info">
 					<!-- teach tom star-->
 					<div class="teach">
 						<div class="teach_top">
@@ -269,7 +270,7 @@
 					<!-- teach Stephanie end-->
 				</div>
 			</div>
-			<div class="btn">
+			<div id="nextBtn" class="btn">
 				<img src="images/next_btn.png">
 			</div>
 		</div>
@@ -305,11 +306,13 @@
 	</footer>
 	<!-- footer end -->
 	<!-- video star -->
-	<div class="position">
+	<div id="videoBox" class="position">
 		<div class="video_box">
-			<video></video>
+			<video src="images/jsc.mp4"></video>
 		</div>
 	</div>
 	<!-- video end -->
+	<script type="text/javascript" src="js/iqbar.js"></script>
+	<script src="http://vjs.zencdn.net/5.8.0/video.js"></script>
 </body>
 </html>

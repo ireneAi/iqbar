@@ -37,21 +37,21 @@ address{font-style: normal;}
 
 .iqbar{max-width:1280px;width:100%; margin: 0 auto;}
 /*header*/
-header {background: #313f97;position: fixed;top:0;z-index:999;left:50%;transform:translateX(-50%)}
+header {background: #313f97;position: fixed;top:0;z-index:999;left:50%;-webkit-transform:translateX(-50%);-moz-transform:translateX(-50%);-ms-transform:translateX(-50%);transform:translateX(-50%)}
 .i_head {height: 58px; width:1000px; margin:0 auto;}
 .i_head img.logo{height: 39px;width: auto;margin:10px 0 0 11px;display: inline-block;}
 .i_head .login {float: right;height: 58px;width:auto}
 .i_head .login li{display: inline-block;line-height:58px;font-family:MyriadPro;height:58px;float:left;}
-.i_head .login li a{font-size:16px;transition: background 0.25s ease-out;height:17px; line-height:20px;vertical-align:middle;color: #fff;display: inline-block;padding-left: 30px;background: url(../images/h_login.png) no-repeat left top;}
-.i_head .login li a{margin-top:18px \9;}
+.i_head .login li a{font-size:16px;height:17px; line-height:20px;vertical-align:middle;color: #fff;display: inline-block;padding-left: 30px;background: url(../images/h_login.png) no-repeat left top;}
+.i_head .login li a{-webkit-transition: background 0.25s ease-out;-moz-transition: background 0.25s ease-out;-ms-transition: background 0.25s ease-out;transition: background 0.25s ease-out;margin-top:18px \9;}
 .i_head .login a.log_in{width:114px;}
 .i_head .login a.log_in:hover{background-position:left -17px;}
 .i_head .login a.sign_up{background-position:-114px top; }
 .i_head .login a.sign_up:hover {background-position:-114px -17px; }
 /*banner*/
 .banner{height: 648px;position: relative;overflow: hidden;text-align: center;margin-top: 57px}
-.banner_img {}
-.banner_btn {position: absolute;bottom:173px;margin-left:50%;transform:translateX(-50%);}
+.banner_img img{ opacity: 0;filter:alpha(opacity=0);position: absolute;top:0;left:0;}
+.banner_btn {position: absolute;bottom:173px;margin-left:50%;transform:translateX(-50%);z-index: 999;}
 .banner_btn li{margin-right:5px;cursor:pointer;display: inline-block;height: 12px;width:12px;border:1px solid #fff;background: #fff;border-radius: 50%;}
 .banner_btn li.on{background:none;}
 /*study*/
@@ -59,13 +59,26 @@ header {background: #313f97;position: fixed;top:0;z-index:999;left:50%;transform
 .study_list {width: 50%;float: left; text-align: center;height:325px;} 
 .study_list dl{width:285px; margin:0 auto; height: 235px;} 
 .study_list dl dt{position: relative;height: 89px;margin-bottom: 5px;}  
+.study_list .pos{
+  -webkit-transition:all 0.25s ease;
+  -moz-transition:all 0.25s ease;
+  -ms-transition:all 0.25s ease;
+  -webkit-transform:translateY(-50%) scale(.5);
+  -moz-transform:translateY(-50%) scale(.5);
+  -ms-transform:translateY(-50%) scale(.5);
+} 
 .study_list .pos{transition:all 0.25s ease;transform:translateY(-50%) scale(.5);height:89px;width:89px;background: url(../images/pos.png);position: absolute;top:0;left:98px; opacity: 0;} 
-.study_list .pos{fiter:alpha(opacity=0);} 
 .study_list a.Learn_more {font-size:14px;line-height:21px;width:90px;height: 21px;background: #f8b500;border-radius: 20px;display: inline-block;color: #fff;} 
 .learn_title {height: 56px;}
 .learn_title h3{font-size:20px;}
 .learn_text p{font-weight: bold;color:#6d6d6d;}
-.study_list:hover .pos{transform:translateY(0); opacity: 1;fiter:alpha(opacity=100);} 
+.study_list:hover .pos{
+  -webkit-transform:translateY(0) scale(1);
+  -moz-transform:translateY(0) scale(1);
+  -ms-transform:translateY(0) scale(1);
+  transform:translateY(0) scale(1);
+   opacity: 1;
+ } 
 /*becom_main*/
 .becom_main {background: url(../images/be_come.png) no-repeat center top; height: 892px;padding-top:135px;}
 .become {width:1000px;margin:0 auto; height: 892px;}
@@ -139,4 +152,10 @@ footer {padding-top:44px;height: 223px;background:#ececec url(../images/footer_b
 
 /*video*/
 .position{background:rgba(0,0,0,.5);position:fixed;height: 100%;width:100%;z-index:1000;top:0; display: none;}
-.video_box {height: 452px;width:728px;border-radius: 5px;background:#fff;left:50%;top:50%;position:absolute;transform:translate(-50%,-50%);}
+.video_box {height: 452px;width:728px;border-radius: 5px;background:#fff;left:50%;top:50%;position:absolute;
+  -webkit-transform:translate(-50%,-50%);
+  -moz-transform:translate(-50%,-50%);
+  -ms-transform:translate(-50%,-50%);
+  transform:translate(-50%,-50%);
+}
+.video_box video {height: 452px;width:728px;}
