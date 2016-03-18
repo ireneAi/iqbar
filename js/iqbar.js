@@ -103,16 +103,16 @@
 	}
 	// learn_btn hover效果
 	var study_box = document.getElementById('study_main'),
-	    learn_btn = study_box.getElementsByTagName('button');
-	    for(var i=0;i<learn_btn.length;i++){
-	    	learn_btn[i].onmouseover = function(){
-	    		this.parentNode.className += " active"
-	    		
-	    	}
-	    	learn_btn[i].onmouseout = function(){
-	    		this.parentNode.className = "study_list"
-	    	}
-	    }
+	learn_btn = study_box.getElementsByTagName('button');
+	for(var i=0;i<learn_btn.length;i++){
+		learn_btn[i].onmouseover = function(){
+			this.parentNode.className += " active"
+
+		}
+		learn_btn[i].onmouseout = function(){
+			this.parentNode.className = "study_list"
+		}
+	}
 
 	// 老师切换
 	var listtimer,play_l,list_index=1,
@@ -124,53 +124,45 @@
 
 	teachBox.style.width =  techBoxl * 466 + 'px';
 
-	prevBtn.onclick = function(){		
-		list_index--		
-		if(list_index <= -1 ){list_index = techBoxl-2 ;}
-		startMoveL(-list_index*466)
+	prevBtn.onclick = function(){	
+		list_index--
+		 if(list_index < 0 ){list_index = techBoxl-2 ;}
+		setMove(teachBox,-list_index*466)
+		clearInterval(play_l)
 	}
 	nextBtn.onclick = function (){	
-		console.log(list_index)		
+		clearInterval(play_l)	
+		console.log(list_index)
+		list_index ++;
 		if(list_index > techBoxl-2){list_index = 0}	
-		startMoveL(teachBox,"left",-list_index*466)
-		list_index ++
-	}
-	function next_l(){
-		startMoveL(teachBox,"left",-list_index*466)
-		list_index ++
-		if(list_index > techBoxl-2){list_index = 0}	
-	}
-	bigBox.onmouseover = function(){
-		play_l = clearInterval(play_l)
-	}
-	bigBox.onmouseout = function(){
-		play_l = setInterval(next_l,3000)		
-	}
-	var play_l = setInterval(next_l,3000);
+		setMove(teachBox,-list_index*466)
 
-	function startMoveL(obj, attr, iTarget) {
-		clearInterval(obj.time);
-		obj.time = setInterval(function() {
-			var cur = 0;
-			if (attr == 'opacity') {
-				cur = Math.round(parseFloat(getStyle(obj, attr)) * 100);
-			} else {
-				cur = parseInt(getStyle(obj, attr));
-			}
-			var speed = (iTarget - cur) / 6;
-			speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
-			if (cur == iTarget) {
-				clearInterval(obj.time);
-			} else {
-				if (attr == 'opacity') {
-					obj.style.filter = 'alpha(opacity=' + cur + speed + ')';
-					obj.style.opacity = (cur + speed) / 100;
-				} else {
-					obj.style[attr] = cur + speed + 'px';
-				}
-			}
-		}, 30);
 	}
+function next_l(){		
+	list_index ++
+	if(list_index > techBoxl-2){list_index = 0}	
+		setMove(teachBox,-list_index*466)
+}
+bigBox.onmouseover = function(){
+	clearInterval(play_l)
+}
+bigBox.onmouseout = function(){
+	play_l = setInterval(next_l,3000)		
+}
+var play_l = setInterval(next_l,3000);
+
+function setMove(ele,itarget){
+	clearInterval(listtimer);
+	listtimer = setInterval(function(){			
+		var speed = (itarget - ele.offsetLeft)/5;
+		speed= speed>0 ? Math.ceil(speed) : Math.floor(speed);
+		if (ele.offsetLeft == itarget){
+			clearInterval(listtimer);
+		}else{
+			ele.style.left = ele.offsetLeft + speed +'px';
+		}
+	},30)
+}
 
 	// top事件
 	var topbtn = document.getElementById('top');
@@ -182,11 +174,18 @@
 		if(scrTop<=300)	{
 			topbtn.style.display = "none";	
 		}
-	}
+	}	
 	topbtn.onclick = function(){
-		document.body.scrollTop = 0
-		document.documentElement.scrollTop = 0
+		var scrTop= document.body.scrollTop || document.documentElement.scrollTop;
+		var Ttmer = setInterval(function(){			
+			scrTop -= 20
+			document.body.scrollTop = document.documentElement.scrollTop = scrTop;					
+			if(scrTop<=0){clearInterval(Ttmer)}
+		},5)
 	}
+
+
+
 	// 需要全屏显示的话
 	// var main = document.getElementById('main');		
 	// if(innerWidth>1280){

@@ -173,7 +173,7 @@ footer {padding-top:44px;height: 223px;background:#ececec url(../images/footer_b
 
 /*video*/
 .position{background:rgba(0,0,0,.5);position:fixed;height: 100%;width:100%;z-index:1000;top:0; display: none;}
-#close {background:#fff; z-index:999;border-radius:50%;font-size: 16px; height: 30px;width:30px; color:#000; text-align: center;line-height: 30px;position: absolute;top:20px;right: 20px;cursor: pointer}
+#close {text-shadow:0 0 5px #000;z-index:999;border-radius:50%;font-size: 30px; height: 30px;width:30px; color:#fff; text-align: center;line-height: 30px;position: absolute;top:10px;right: 10px;cursor: pointer;font-family: Arial, Helvetica, sans-serif}
 .video_box {height: 452px;width:728px;border-radius: 10px;overflow:hidden;background:#fff;left:50%;top:50%;position:absolute;
   -webkit-transform:translate(-50%,-50%);
   -moz-transform:translate(-50%,-50%);
