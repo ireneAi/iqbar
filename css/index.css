@@ -65,21 +65,12 @@ header {background: #313f97;position: fixed;top:0;z-index:999;left:50%;-webkit-t
 .study_list {width: 50%;float: left; text-align: center;height:325px; position: relative;} 
 .study_list dl{width:285px; margin:0 auto; height: 235px;} 
 .study_list dl dt{position: relative;height: 89px;margin-bottom: 5px;}  
-.study_list .pos{
-  -webkit-transition:all 0.25s ease;
-  -moz-transition:all 0.25s ease;
-  -ms-transition:all 0.25s ease;
-  -webkit-transform:translateY(-50%) scale(.5);
-  -moz-transform:translateY(-50%) scale(.5);
-  -ms-transform:translateY(-50%) scale(.5);
-} 
-/*.study_list .pos{transition:all 0.25s ease;transform:translateY(-50%) scale(.5);height:89px;width:89px;background: url(../images/pos.png);position: absolute;top:0;left:98px; opacity: 0;} */
 .study_list a.Learn_more {left:50%;z-index:1001;position:absolute;font-size:14px;line-height:21px;width:90px;height: 21px;background: #f8b500;border-radius: 20px;display: inline-block;color: #fff;
   -webkit-transform:translateX(-50%);
   -moz-transform:translateX(-50%);
   -ms-transform:translateX(-50%)} 
 .one-button{position:relative;overflow:hidden;margin:0 10px;display:inline;z-index:0;text-align:left;padding:20px}
-.one-button a {-webkit-transition:all 0.25s ease;-moz-transition:all 0.25s ease;-ms-transition:all 0.25s ease;transition:all 0.25s ease;z-index:1000;display:block;width:360px;height:280px;position: absolute; top:-100px;left:-162px;background:#545e9d;border-radius:10px;opacity: 0;display:none \9;}
+.one-button a {-webkit-transition:all 0.25s ease;-moz-transition:all 0.25s ease;-ms-transition:all 0.25s ease;transition:all 0.25s ease;z-index:1000;display:block;width:360px;height:280px;position: absolute; top:-280px;left:-162px;background:#545e9d;border-radius:10px;opacity: 0;display:none \9;}
 .study_list:hover .one-button a {top:-250px;opacity: 1;display:block\9;}
 .one-button p{display:block;z-index:1000;font-size:12px;color:#fff;padding:0;margin:0;line-height:12px;-webkit-transition:all 1s ease-in-out;padding:10px}
 .one-button p b{display:block;font-size:14px;color:#f8b500;margin:0;padding:0;line-height:12px;padding-left:10px}
@@ -88,13 +79,7 @@ header {background: #313f97;position: fixed;top:0;z-index:999;left:50%;-webkit-t
 .learn_title {height: 56px;}
 .learn_title h3{font-size:20px;}
 .learn_text p{font-weight: bold;color:#6d6d6d;}
-/*.study_list:hover .pos{
-  -webkit-transform:translateY(0) scale(1);
-  -moz-transform:translateY(0) scale(1);
-  -ms-transform:translateY(0) scale(1);
-  transform:translateY(0) scale(1);
-   opacity: 1;
- } */
+
 /*becom_main*/
 .becom_main {background: url(../images/be_come.png) no-repeat center top; height: 892px;padding-top:135px;}
 .become {width:1000px;margin:0 auto; height: 892px;}
@@ -104,16 +89,34 @@ header {background: #313f97;position: fixed;top:0;z-index:999;left:50%;-webkit-t
 .condition:nth-child(2) {background: #f8b500;}
 .condition:nth-child(3) {background: #e95098;}
 .condition:nth-child(4) {background: #aeaeae;}
-.condition dl{height: 323px;}
-.condition dl dt{border-bottom:1px solid rgba(255,255,255,.5);height: 160px;padding-top:32px;text-align: center;}
+.condition dl{height: 360px;position:relative;}
+.condition dl dt{position:relative;border-bottom:1px solid rgba(255,255,255,.5);height: 160px;padding-top:32px;text-align: center;}
 .condition dl dt span{display: inline-block;vertical-align: middle;height: 98px;width:136px;background: url(../images/be_come_timg.png);}
 .condition dl dt span.Buddy{background-position:left -98px;}
 .condition dl dt span.Update{background-position:left -196px;}
 .condition dl dt span.Attend{background-position:left -294px; }
 .condition dl dd h3 {font-size: 20px;color:#fff;text-align: center;height: 50px;line-height: 50px;}
 .condition dl dd p{color:#fff;font-size: 14px; line-height: 16px;}
-.condition a.play{display: inline-block; height: 31px;width:64px; background: url(../images/be_come_timg.png) no-repeat left -398px;}
-.condition a.play:hover{opacity: .7;}
+.condition dl dd.play{position: absolute;width:100%;bottom:0;}
+.condition span.play{display: inline-block;cursor: pointer; height: 32px;width:64px; background: url(../images/be_come_timg.png) no-repeat left -398px;}
+.condition span.play:hover{opacity: .7;}
+.condition dl .pos{
+  -webkit-transition:all 0.1s ease;
+  -moz-transition:all 0.1s ease;
+  -ms-transition:all 0.1s ease;
+  -webkit-transform:translateY(-50%) scale(.8);
+  -moz-transform:translateY(-50%) scale(.8);
+  -ms-transform:translateY(-50%) scale(.8);
+} 
+.condition dl .pos{transition:all 0.1s ease;transform:translateY(0) scale(.5);height:98px;width:136px;background: url(../images/pos_t.png);position: absolute;top:32px;left:28px; opacity: 0;} 
+.condition dl:hover .pos{
+  -webkit-transform:translateY(0) scale(1);
+  -moz-transform:translateY(0) scale(1);
+  -ms-transform:translateY(0) scale(1);
+  transform:translateY(0) scale(1);
+   opacity: 1;
+ } 
+
 /*Complete*/
 .Complete{height: 1030px;background: url(../images/complete.png) center top;}
 .Complete_main {width:1000px;margin:0 auto;position: relative;}
@@ -168,7 +171,8 @@ footer {padding-top:44px;height: 223px;background:#ececec url(../images/footer_b
 
 /*video*/
 .position{background:rgba(0,0,0,.5);position:fixed;height: 100%;width:100%;z-index:1000;top:0; display: none;}
-.video_box {height: 452px;width:728px;border-radius: 5px;background:#fff;left:50%;top:50%;position:absolute;
+#close {background:#fff; z-index:999;border-radius:50%;font-size: 16px; height: 30px;width:30px; color:#000; text-align: center;line-height: 30px;position: absolute;top:20px;right: 20px;cursor: pointer}
+.video_box {height: 452px;width:728px;border-radius: 10px;overflow:hidden;background:#fff;left:50%;top:50%;position:absolute;
   -webkit-transform:translate(-50%,-50%);
   -moz-transform:translate(-50%,-50%);
   -ms-transform:translate(-50%,-50%);

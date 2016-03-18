@@ -2,15 +2,31 @@
 	// 播放视频
 	var btnPlay = document.getElementById('btnPlay'),
 	play_video = document.getElementById('play_video'),
-	videoBox = document.getElementById('videoBox');
+	videoBox = document.getElementById('videoBox'),
+	closebtn = document.getElementById('close'),
+	bp1 = document.getElementById('play1'),
+	bp2 = document.getElementById('play2'),
+	bp3 = document.getElementById('play3'),
+	bp4 = document.getElementById('play4'),
+	video = document.getElementById('example_video_1'),
+	videosrc = video.src;
 
-	play_video.onclick = btnPlay.onclick = function(){
+	bp1.onclick = 
+	bp2.onclick = 	
+	bp3.onclick = 
+	bp4.onclick =	
+	play_video.onclick = 
+	btnPlay.onclick = video_f;
+
+	function video_f(){
 		videoBox.style.display = "block";
+		video.src = videosrc
 	}
 
-	videoBox.onclick = function(){
+	closebtn.onclick = function(){
 		videoBox.style.display = "none";
-		return false;
+		video.src=""
+
 	}
 	// banner 轮播
 	var i,index=0,timer,
@@ -33,7 +49,8 @@
 	
 	Btn_parent.onmouseout = function ()
 	{
-		playTimer = setInterval(next, 3000)
+		playTimer = setInterval(next, 3000);
+		video.pause()
 	};
 	function cutover(){
 		for (var i = 0; i < Btn_list.length; i++) {
@@ -72,11 +89,11 @@
 		id.style.opacity=(cur+iSpeed)/100;
 	}
 
-	function getStyle(obj, name){
-		if(obj.currentStyle){
+	function getStyle(obj, name) {
+		if (obj.currentStyle) {
 			return obj.currentStyle[name];
-		} else{
-			return getComputedStyle(obj, false)[name];
+		} else {
+			return getComputedStyle(obj, null)[name];
 		}
 	}
 	// 老师切换
@@ -89,8 +106,7 @@
 
 	teachBox.style.width =  techBoxl * 466 + 'px';
 
-	prevBtn.onclick = function(){
-		console.log(list_index)
+	prevBtn.onclick = function(){		
 		list_index--		
 		if(list_index <= -1 ){list_index = techBoxl-2 ;}
 		startMoveL(-list_index*466)

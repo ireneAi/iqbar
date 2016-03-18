@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width">
 	<title>iqbar home</title>
 	<link rel="stylesheet" type="text/css" href="css/index.css">
-	<link href="http://vjs.zencdn.net/5.8.0/video-js.css" rel="stylesheet">
+	<link href="css/video-js.css" rel="stylesheet">
 </head>
 <body>
 	<div id="main">
@@ -47,9 +47,7 @@
 			<div class="study_list">
 				<dl>
 					<dt>
-						<img src="images/s_l1.png">
-						<div class="pos">
-						</div>
+						<img src="images/s_l1.png">						
 					</dt>
 					<dd class="learn_title">
 						<h3>University/subject choices <br>consultation</h3>
@@ -77,8 +75,6 @@
 				<dl>
 					<dt>
 						<img src="images/s_l2.png">
-						<div class="pos">
-						</div>
 					</dt>
 					<dd class="learn_title">
 						<h3>Writing skill lab</h3>
@@ -105,9 +101,7 @@
 			<div class="study_list">
 				<dl>
 					<dt>
-						<img src="images/s_l3.png">
-						<div class="pos">
-						</div>
+						<img src="images/s_l3.png">						
 					</dt>
 					<dd class="learn_title">
 						<h3>Academic subject mentoring</h3>
@@ -135,17 +129,16 @@
 				<dl>
 					<dt>
 						<img src="images/s_l4.png">
-						<div class="pos">
-						</div>
 					</dt>
 					<dd class="learn_title">
 						<h3>English oral practice</h3>
 					</dd>
 					<dd class="learn_text">
 						<p>Talk freely with Breadies over whichever topic they would like to talk about Boost Breadies' confidence in English oral</p>
-					</dd>
+					</dd>				
+					
 				</dl>
-				<a class="Learn_more" href="#"> Learn More</a>	
+				<a class="Learn_more" href="#"> Learn More</a>			
 
 				<div class="one-button">
 					<a href="#x">						
@@ -173,57 +166,75 @@
 						<dl>
 							<dt>
 								<span class="online"></span>
+								<div class="pos">
+								</div>
 							</dt>
 							<dd>
 								<h3>Online registration</h3>
 							</dd>
 							<dd>
 								<p>Studying at top UK universities? Would like to share your knowledge and passion? Register online and explore more about IQBAR.</p>
-							</dd>					
+							</dd>		
+							<dd class="play">
+								<span id="play1" class="play"></span>
+							</dd>			
 						</dl>
-						<a href="#" class="play"></a>					
+											
 					</div>
 					<div class="condition">
 						<dl>
 							<dt>
 								<span class="Buddy"></span>
+								<div class="pos">
+								</div>
 							</dt>
 							<dd>
 								<h3>Buddy application</h3>
 							</dd>
 							<dd>
 								<p> Complete your application by filling in your details on our online application form. An excellent self introduction video and a drawing resume always help adding credit to your application.</p>
-							</dd>					
+							</dd>						
+							<dd class="play">
+								<span id="play2" class="play"></span>
+							</dd>			
 						</dl>
-						<a href="#" class="play"></a>
 					</div>
 					<div class="condition">
 						<dl>
 							<dt>
 								<span class="Update"></span>
+								<div class="pos">
+								</div>
 							</dt>
 							<dd>
 								<h3>Update availablility</h3>
 							</dd>
 							<dd>
 								<p> Please “pin down” the hours during which you are able to help online, update your available time and check your course booking situation everyday and from time to time</p>
-							</dd>					
+							</dd>			
+							<dd class="play">
+								<span id="play3" class="play"></span>
+							</dd>			
 						</dl>
-						<a href="#" class="play"></a>
 					</div>
 					<div class="condition">
 						<dl>
 							<dt>
-								<span class="Attend"></span>
+								<span class="Attend">									
+								</span>
+								<div class="pos">
+								</div>
 							</dt>
 							<dd>
 								<h3>Attend session</h3>
 							</dd>
 							<dd>
 								<p>Attend your booking on time</p>
-							</dd>					
+							</dd>						
+							<dd  class="play">
+								<span  id="play4" class="play"></span>
+							</dd>			
 						</dl>
-						<a href="#" class="play"></a>
 					</div>
 				</div>
 			</div>		
@@ -399,9 +410,11 @@
 		<!-- footer end -->
 		<!-- video star -->
 		<div id="videoBox" class="position">
+			<span id="close">X</span>
 			<div class="video_box">
-				<video id="example_video_1" class="video-js vjs-default-skin" 
-				controls preload="auto" width="728" height="452"     src="images/jsc.mp4"></video>
+
+				<video id="example_video_1" class="video-js vjs-default-skin" controls preload="auto" width="728" height="452" data-setup='{"example_option":true}' poster="images/video_img.png" src="images/demo.mp4" type="video/mp4">
+				</video>
 			</div>
 		</div>
 		<!-- video end -->
