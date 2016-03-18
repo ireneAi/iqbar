@@ -59,6 +59,7 @@ header {background: #313f97;position: fixed;top:0;z-index:999;left:50%;-webkit-t
 .banner_btn {position: absolute;bottom:173px;margin-left:50%;transform:translateX(-50%);z-index: 999;}
 .banner_btn li{margin-right:5px;cursor:pointer;display: inline-block;height: 12px;width:12px;border:1px solid #fff;background: #fff;border-radius: 50%;}
 .banner_btn li.on{background:none;}
+.play_video {position: absolute;z-index: 1000;top:180px;margin-left: -50px;cursor: pointer;}
 /*study*/
 .study_main{ height: 650px;margin-top: -80px;width:1000px;position: relative;;z-index:10;}
 .study_list {width: 50%;float: left; text-align: center;height:325px; position: relative;} 
@@ -175,5 +176,8 @@ footer {padding-top:44px;height: 223px;background:#ececec url(../images/footer_b
 }
 .video_box video {height: 452px;width:728px;}
 @media (device-width:1024px) and (device-height:768px){
-  
+  .iqbar{max-width:1280px; margin: 0 auto;min-width:1280px;}
+}
+@media (device-height:1024px) and (device-width:768px){
+  .iqbar{max-width:1280px; margin: 0 auto;min-width:1280px;}
 }
