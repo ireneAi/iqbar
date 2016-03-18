@@ -59,7 +59,7 @@ header {background: #313f97;position: fixed;top:0;z-index:999;left:50%;-webkit-t
 .banner_btn {position: absolute;bottom:173px;margin-left:50%;transform:translateX(-50%);z-index: 999;}
 .banner_btn li{margin-right:5px;cursor:pointer;display: inline-block;height: 12px;width:12px;border:1px solid #fff;background: #fff;border-radius: 50%;}
 .banner_btn li.on{background:none;}
-.play_video {position: absolute;z-index: 1000;top:180px;margin-left: -50px;cursor: pointer;}
+.play_video {position: absolute;z-index: 1000;top:180px;margin-left: -50px;cursor: pointer;left:640px \9;}
 /*study*/
 .study_main{ height: 650px;margin-top: -80px;width:1000px;position: relative;;z-index:10;}
 .study_list {width: 50%;float: left; text-align: center;height:325px; position: relative;} 
@@ -139,9 +139,9 @@ header {background: #313f97;position: fixed;top:0;z-index:999;left:50%;-webkit-t
 .teach_box {width:1000px;margin:0 auto; height: 294px;}
 .teach_box .btn {text-align: center;cursor:pointer;line-height: 130px; width:32px;height: 130px;background: rgba(0,0,0,0.4);border-radius:3px; float: left;margin-top:85px;}
 .teach_box .btn:hover{background: rgba(0,0,0,0.6);transition: background 0.25s;}
-.teach_box .btn img{vertical-align: middle;}
+.teach_box .btn img{vertical-align: middle;margin-top:50px \9;}
 .teach_main {width:936px;height: 294px;float: left;overflow: hidden;position: relative;}
-.teach_main .teach_info {position: absolute;left:0;top:0;}
+.teach_main .teach_info {position: absolute;left:0;top:0;z-index: 99}
 .teach_main .teach_info .teach {float:left;height: 292px;width:415px;padding:35px;margin:0 25px;border:1px solid #c8c8c8;border-radius: 15px;}
 .teach_top {height: 188px;}
 .teach_top img.photo{ display: inline-block;float: left;margin:0 20px 0 0;height: 160px;width:160px;}
@@ -174,6 +174,10 @@ footer {padding-top:44px;height: 223px;background:#ececec url(../images/footer_b
   -ms-transform:translate(-50%,-50%);
   transform:translate(-50%,-50%);
 }
+
+/*top*/
+#top {display:none;position:fixed;bottom:150px; right:200px;height:60px;width:60px;background: url(../images/top.png);z-index:999;cursor:pointer;}
+
 .video_box video {height: 452px;width:728px;}
 @media (device-width:1024px) and (device-height:768px){
   .iqbar{max-width:1280px; margin: 0 auto;min-width:1280px;}

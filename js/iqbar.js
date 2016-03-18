@@ -1,8 +1,8 @@
 ﻿(function(){
 	// 播放视频
 	var btnPlay = document.getElementById('btnPlay'),
-	    play_video = document.getElementById('play_video'),
-	    videoBox = document.getElementById('videoBox');
+	play_video = document.getElementById('play_video'),
+	videoBox = document.getElementById('videoBox');
 
 	play_video.onclick = btnPlay.onclick = function(){
 		videoBox.style.display = "block";
@@ -14,9 +14,9 @@
 	}
 	// banner 轮播
 	var i,index=0,timer,
-	    Btn_parent = document.getElementById('Banner_btn'),
-	    Btn_list = Btn_parent.getElementsByTagName('li'),
-	    banner_list = document.getElementById('Banner_list').getElementsByTagName('img');
+	Btn_parent = document.getElementById('Banner_btn'),
+	Btn_list = Btn_parent.getElementsByTagName('li'),
+	banner_list = document.getElementById('Banner_list').getElementsByTagName('img');
 
 	for (i=0,len=Btn_list.length; i < len ; i++) {
 		Btn_list[i].index = i;
@@ -33,10 +33,9 @@
 	
 	Btn_parent.onmouseout = function ()
 	{
-		playTimer = setInterval(next, 4000)
+		playTimer = setInterval(next, 3000)
 	};
 	function cutover(){
-
 		for (var i = 0; i < Btn_list.length; i++) {
 			Btn_list[i].className = '';
 			startMove(banner_list[i],'0')
@@ -56,7 +55,7 @@
 		index >= banner_list.length && (index =0);
 		cutover()
 	}
-	var playTimer = setInterval(next,4000)
+	var playTimer = setInterval(next,3000)
 
 	function startMove(id,iTarget){
 		clearInterval(timer);
@@ -81,12 +80,12 @@
 		}
 	}
 	// 老师切换
-	var listtimer,list_index=1,
-	    prevBtn = document.getElementById('prevBtn'),
-	    nextBtn = document.getElementById('nextBtn'),
-	    teachBox = document.getElementById('teachBox'),
-	    bigBox = document.getElementById('tebox'),
-	    techBoxl =teachBox.getElementsByTagName('img').length;
+	var listtimer,play_l,list_index=1,
+	prevBtn = document.getElementById('prevBtn'),
+	nextBtn = document.getElementById('nextBtn'),
+	teachBox = document.getElementById('teachBox'),
+	bigBox = document.getElementById('tebox'),
+	techBoxl =teachBox.getElementsByTagName('img').length;
 
 	teachBox.style.width =  techBoxl * 466 + 'px';
 
@@ -99,40 +98,61 @@
 	nextBtn.onclick = function (){	
 		console.log(list_index)		
 		if(list_index > techBoxl-2){list_index = 0}	
-		startMoveL(-list_index*466)
+		startMoveL(teachBox,"left",-list_index*466)
 		list_index ++
 	}
 	function next_l(){
-		startMoveL(-list_index*466)
+		startMoveL(teachBox,"left",-list_index*466)
 		list_index ++
 		if(list_index > techBoxl-2){list_index = 0}	
 	}
 	bigBox.onmouseover = function(){
-		clearInterval(play_l)
+		play_l = clearInterval(play_l)
 	}
-
 	bigBox.onmouseout = function(){
-		play_l = setInterval(next_l,3000)
+		play_l = setInterval(next_l,3000)		
 	}
-	var play_l = setInterval(next_l,3000)
-
-	function startMoveL(iTarget){
-		clearInterval(listtimer);
-		listtimer = setInterval(function ()
-		{
-			doMoveL(iTarget)
-		}, 30)	
-	}
-	function doMoveL(iTarget)
-	{		
-		var iSpeed = (iTarget - teachBox.offsetLeft) / 10;
-		iSpeed = iSpeed > 0 ? Math.ceil(iSpeed) : Math.floor(iSpeed);		
-		teachBox.offsetLeft == iTarget ? clearInterval(timer) : teachBox.style.left = teachBox.offsetLeft + iSpeed + "px"
-	}
-
-
-
+	var play_l = setInterval(next_l,3000);
 	
+	function startMoveL(obj, attr, iTarget) {
+		clearInterval(obj.time);
+		obj.time = setInterval(function() {
+			var cur = 0;
+			if (attr == 'opacity') {
+				cur = Math.round(parseFloat(getStyle(obj, attr)) * 100);
+			} else {
+				cur = parseInt(getStyle(obj, attr));
+			}
+			var speed = (iTarget - cur) / 6;
+			speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+			if (cur == iTarget) {
+				clearInterval(obj.time);
+			} else {
+				if (attr == 'opacity') {
+					obj.style.filter = 'alpha(opacity=' + cur + speed + ')';
+					obj.style.opacity = (cur + speed) / 100;
+				} else {
+					obj.style[attr] = cur + speed + 'px';
+				}
+			}
+		}, 30);
+	}
+
+	// top事件
+	var topbtn = document.getElementById('top');
+	window.onscroll = function(){
+		var scrTop = document.body.scrollTop || document.documentElement.scrollTop;
+		if(scrTop>=300)	{
+			topbtn.style.display = "block";	
+		}
+		if(scrTop<=300)	{
+			topbtn.style.display = "none";	
+		}
+	}
+	topbtn.onclick = function(){
+		document.body.scrollTop = 0
+		document.documentElement.scrollTop = 0
+	}
 	// 需要全屏显示的话
 	// var main = document.getElementById('main');		
 	// if(innerWidth>1280){
