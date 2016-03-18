@@ -113,7 +113,7 @@
 		play_l = setInterval(next_l,3000)		
 	}
 	var play_l = setInterval(next_l,3000);
-	
+
 	function startMoveL(obj, attr, iTarget) {
 		clearInterval(obj.time);
 		obj.time = setInterval(function() {

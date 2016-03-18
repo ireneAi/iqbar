@@ -174,11 +174,12 @@ footer {padding-top:44px;height: 223px;background:#ececec url(../images/footer_b
   -ms-transform:translate(-50%,-50%);
   transform:translate(-50%,-50%);
 }
+.video_box video {height: 452px;width:728px;}
+
 
 /*top*/
 #top {display:none;position:fixed;bottom:150px; right:200px;height:60px;width:60px;background: url(../images/top.png);z-index:999;cursor:pointer;}
 
-.video_box video {height: 452px;width:728px;}
 @media (device-width:1024px) and (device-height:768px){
   .iqbar{max-width:1280px; margin: 0 auto;min-width:1280px;}
 }
