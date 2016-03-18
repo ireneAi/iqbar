@@ -103,9 +103,9 @@
 		list_index ++
 	}
 	function next_l(){
-		if(list_index > techBoxl-1){list_index = 0}	
 		startMoveL(-list_index*466)
 		list_index ++
+		if(list_index > techBoxl-2){list_index = 0}	
 	}
 	bigBox.onmouseover = function(){
 		clearInterval(play_l)
