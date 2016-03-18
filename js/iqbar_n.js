@@ -97,7 +97,7 @@
 	function getStyle(obj, name) {
 		if (obj.currentStyle) {
 			return obj.currentStyle[name];
-		} else {
+		} else{
 			return getComputedStyle(obj, null)[name];
 		}
 	}
@@ -184,8 +184,10 @@
 		}
 	}
 	topbtn.onclick = function(){
-		document.body.scrollTop = 0
-		document.documentElement.scrollTop = 0
+		document.body.scrolltop = 0
+		document.documentElement.scrolltop = 0
+		// startMoveL(document.body,"scrolltop",0)
+		// startMoveL(document.documentElement,"scrolltop",0)
 	}
 	// 需要全屏显示的话
 	// var main = document.getElementById('main');		

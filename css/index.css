@@ -65,13 +65,15 @@ header {background: #313f97;position: fixed;top:0;z-index:999;left:50%;-webkit-t
 .study_list {width: 50%;float: left; text-align: center;height:325px; position: relative;} 
 .study_list dl{width:285px; margin:0 auto; height: 235px;} 
 .study_list dl dt{position: relative;height: 89px;margin-bottom: 5px;}  
-.study_list a.Learn_more {left:50%;z-index:1001;position:absolute;font-size:14px;line-height:21px;width:90px;height: 21px;background: #f8b500;border-radius: 20px;display: inline-block;color: #fff;
+.study_list .Learn_more {cursor:pointer;left:50%;z-index:1001;position:absolute;font-size:14px;line-height:21px;width:90px;height: 21px;background: #f8b500;border-radius: 20px;display: inline-block;color: #fff;
   -webkit-transform:translateX(-50%);
   -moz-transform:translateX(-50%);
-  -ms-transform:translateX(-50%)} 
+  -ms-transform:translateX(-50%);
+  transform:translateX(-50%);
+  } 
 .one-button{position:relative;overflow:hidden;margin:0 10px;display:inline;z-index:0;text-align:left;padding:20px}
-.one-button a {-webkit-transition:all 0.25s ease;-moz-transition:all 0.25s ease;-ms-transition:all 0.25s ease;transition:all 0.25s ease;z-index:1000;display:block;width:360px;height:280px;position: absolute; top:-280px;left:-162px;background:#545e9d;border-radius:10px;opacity: 0;display:none \9;}
-.study_list:hover .one-button a {top:-250px;opacity: 1;display:block\9;}
+.one-button a {-webkit-transition:all 0.25s ease;-moz-transition:all 0.25s ease;-ms-transition:all 0.25s ease;transition:all 0.25s ease;z-index:1000;display:block;width:360px;height:280px;position: absolute; top:-280px;left:-162px;background:#545e9d;border-radius:10px;opacity: 0;}
+.active .one-button a {top:-250px;opacity: 1;top:-238px \9;}
 .one-button p{display:block;z-index:1000;font-size:12px;color:#fff;padding:0;margin:0;line-height:12px;-webkit-transition:all 1s ease-in-out;padding:10px}
 .one-button p b{display:block;font-size:14px;color:#f8b500;margin:0;padding:0;line-height:12px;padding-left:10px}
 .one-button p span{display:block;padding:10px;line-height:20px}
