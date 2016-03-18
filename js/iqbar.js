@@ -100,4 +100,8 @@
 		iSpeed = iSpeed > 0 ? Math.ceil(iSpeed) : Math.floor(iSpeed);		
 		id.style.l= (cur+iSpeed)+'px';
 	}
+
+	var prevBtn = document.getElementById('main');
+		console.log(innerWidth)
+
 }())
