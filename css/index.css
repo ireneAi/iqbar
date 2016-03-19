@@ -48,7 +48,7 @@ header {background: #313f97;position: fixed;top:0;z-index:999;left:50%;-webkit-t
 .i_head .login {float: right;height: 58px;width:auto}
 .i_head .login li{display: inline-block;line-height:58px;font-family:MyriadPro;height:58px;float:left;}
 .i_head .login li a{font-size:16px;height:17px; line-height:20px;vertical-align:middle;color: #fff;display: inline-block;padding-left: 30px;background: url(../images/h_login.png) no-repeat left top;}
-.i_head .login li a{-webkit-transition: background 0.25s ease-out;-moz-transition: background 0.25s ease-out;-ms-transition: background 0.25s ease-out;transition: background 0.25s ease-out;margin-top:18px \9;}
+.i_head .login li a{-webkit-transition: background 0.25s ease-out;-moz-transition: background 0.25s ease-out;-ms-transition: background 0.25s ease-out;transition: background 0.25s ease-out;margin-top:18px\0;margin-top:0;}
 .i_head .login a.log_in{width:114px;}
 .i_head .login a.log_in:hover{background-position:left -17px;}
 .i_head .login a.sign_up{background-position:-114px top; }
@@ -59,7 +59,7 @@ header {background: #313f97;position: fixed;top:0;z-index:999;left:50%;-webkit-t
 .banner_btn {position: absolute;bottom:173px;margin-left:50%;transform:translateX(-50%);z-index: 999;}
 .banner_btn li{margin-right:5px;cursor:pointer;display: inline-block;height: 12px;width:12px;border:1px solid #fff;background: #fff;border-radius: 50%;}
 .banner_btn li.on{background:none;}
-.play_video {position: absolute;z-index: 1000;top:180px;margin-left: -50px;cursor: pointer;left:640px \9;}
+.play_video {position: absolute;z-index: 1000;top:180px;margin-left: -50px;margin-left: -180px\9\0;cursor: pointer;left:640px\9\0;}
 /*study*/
 .study_main{ height: 650px;margin-top: -80px;width:1000px;position: relative;;z-index:10;}
 .study_list {width: 50%;float: left; text-align: center;height:325px; position: relative;} 
@@ -73,7 +73,7 @@ header {background: #313f97;position: fixed;top:0;z-index:999;left:50%;-webkit-t
   } 
 .one-button{position:relative;overflow:hidden;margin:0 10px;display:inline;z-index:0;text-align:left;padding:20px}
 .one-button a {-webkit-transition:all 0.25s ease;-moz-transition:all 0.25s ease;-ms-transition:all 0.25s ease;transition:all 0.25s ease;z-index:1000;display:block;width:360px;height:280px;position: absolute; top:-280px;left:-162px;background:#545e9d;border-radius:10px;opacity: 0;}
-.active .one-button a {top:-250px;opacity: 1;top:-238px \9;}
+.active .one-button a {top:-250px;opacity: 1;top:-238px\9\0;}
 .one-button p{display:block;z-index:1000;font-size:12px;color:#fff;padding:0;margin:0;line-height:12px;-webkit-transition:all 1s ease-in-out;padding:10px}
 .one-button p b{display:block;font-size:14px;color:#f8b500;margin:0;padding:0;line-height:12px;padding-left:10px}
 .one-button p span{display:block;padding:10px;line-height:20px}
@@ -144,7 +144,7 @@ header {background: #313f97;position: fixed;top:0;z-index:999;left:50%;-webkit-t
 .teach_box {width:1000px;margin:0 auto; height: 294px;}
 .teach_box .btn {text-align: center;cursor:pointer;line-height: 130px; width:32px;height: 130px;background: rgba(0,0,0,0.4);border-radius:3px; float: left;margin-top:85px;}
 .teach_box .btn:hover{background: rgba(0,0,0,0.6);transition: background 0.25s;}
-.teach_box .btn img{vertical-align: middle;margin-top:50px \9;}
+.teach_box .btn img{vertical-align: middle;margin-top:50px\9\0;}
 .teach_main {width:936px;height: 294px;float: left;overflow: hidden;position: relative;}
 .teach_main .teach_info {position: absolute;left:0;top:0;z-index: 99}
 .teach_main .teach_info .teach {float:left;height: 292px;width:415px;padding:35px;margin:0 25px;border:1px solid #c8c8c8;border-radius: 15px;}
@@ -172,7 +172,7 @@ footer {padding-top:44px;height: 223px;background:#ececec url(../images/footer_b
 .i_foot .share a img{height: 49px;width:49px;display: block;}
 
 /*video*/
-.position{background:rgba(0,0,0,.5);position:fixed;height: 100%;width:100%;z-index:1000;top:0; display: none;}
+.position{background:rgba(0,0,0,.5);position:fixed;height: 100%;width:100%;z-index:1000;top:0;left:0; display: none;}
 #close {text-shadow:0 0 5px #000;z-index:999;border-radius:50%;font-size: 30px; height: 30px;width:30px; color:#fff; text-align: center;line-height: 30px;position: absolute;top:10px;right: 10px;cursor: pointer;font-family: Arial, Helvetica, sans-serif}
 .video_box {height: 452px;width:728px;border-radius: 10px;overflow:hidden;background:#fff;left:50%;top:50%;position:absolute;
   -webkit-transform:translate(-50%,-50%);
@@ -186,9 +186,16 @@ footer {padding-top:44px;height: 223px;background:#ececec url(../images/footer_b
 /*top*/
 #top {display:none;position:fixed;bottom:150px; right:200px;height:60px;width:60px;background: url(../images/top.png);z-index:999;cursor:pointer;}
 
-@media (device-width:1024px) and (device-height:768px){
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) and (min-device-pixel-ratio: 2){ 
+  /*ipad竖屏*/
   .iqbar{max-width:1280px; margin: 0 auto;min-width:1280px;}
 }
-@media (device-height:1024px) and (device-width:768px){
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) and (min-device-pixel-ratio: 2){
+  /*ipad横屏*/
   .iqbar{max-width:1280px; margin: 0 auto;min-width:1280px;}
+}
+@media (min-width:1024px){
+  .iqbar{ margin: 0 auto;min-width:1000px;width:100%;}
+  .banner_img img{left:-136px;}
+  #top{right:40px;bottom:50px;}
 }

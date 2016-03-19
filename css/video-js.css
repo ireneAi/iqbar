@@ -768,7 +768,7 @@ body.vjs-full-window {
   -moz-box-flex: none;
   -webkit-flex: none;
   -ms-flex: none;
-  flex: none; }
+  flex: none;display: none; }
 
 .video-js .vjs-volume-control {
   width: 5em;
