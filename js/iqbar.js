@@ -126,7 +126,7 @@
 
 	prevBtn.onclick = function(){	
 		list_index--
-		if(list_index < 0 ){list_index = techBoxl-2 ;}
+		 if(list_index < 0 ){list_index = techBoxl-2 ;}
 		setMove(teachBox,-list_index*466)
 		clearInterval(play_l)
 	}
@@ -135,49 +135,46 @@
 		console.log(list_index)
 		list_index ++;
 		if(list_index > techBoxl-2){list_index = 0}	
-			setMove(teachBox,-list_index*466)
+		setMove(teachBox,-list_index*466)
 
 	}
-	function next_l(){		
-		list_index ++
-		if(list_index > techBoxl-2){list_index = 0}	
-			setMove(teachBox,-list_index*466)
-	}
-	bigBox.onmouseover = function(){
-		clearInterval(play_l)
-	}
-	bigBox.onmouseout = function(){
-		play_l = setInterval(next_l,3000)		
-	}
-	var play_l = setInterval(next_l,3000);
+function next_l(){		
+	list_index ++
+	if(list_index > techBoxl-2){list_index = 0}	
+		setMove(teachBox,-list_index*466)
+}
+bigBox.onmouseover = function(){
+	clearInterval(play_l)
+}
+bigBox.onmouseout = function(){
+	play_l = setInterval(next_l,3000)		
+}
+var play_l = setInterval(next_l,3000);
 
-	function setMove(ele,itarget){
-		clearInterval(listtimer);
-		listtimer = setInterval(function(){			
-			var speed = (itarget - ele.offsetLeft)/5;
-			speed= speed>0 ? Math.ceil(speed) : Math.floor(speed);
-			if (ele.offsetLeft == itarget){
-				clearInterval(listtimer);
-			}else{
-				ele.style.left = ele.offsetLeft + speed +'px';
-			}
-		},30)
-	}
+function setMove(ele,itarget){
+	clearInterval(listtimer);
+	listtimer = setInterval(function(){			
+		var speed = (itarget - ele.offsetLeft)/5;
+		speed= speed>0 ? Math.ceil(speed) : Math.floor(speed);
+		if (ele.offsetLeft == itarget){
+			clearInterval(listtimer);
+		}else{
+			ele.style.left = ele.offsetLeft + speed +'px';
+		}
+	},30)
+}
 
 	// top事件
 	var topbtn = document.getElementById('top');
-	window.onscroll =  function(){
-		// top判断 高于300显示隐藏
+	window.onscroll = function(){
 		var scrTop = document.body.scrollTop || document.documentElement.scrollTop;
 		if(scrTop>=300)	{
 			topbtn.style.display = "block";	
 		}
 		if(scrTop<=300)	{
 			topbtn.style.display = "none";	
-		}	
-		
+		}
 	}	
-	// 点击top回到顶部
 	topbtn.onclick = function(){
 		var scrTop= document.body.scrollTop || document.documentElement.scrollTop;
 		var Ttmer = setInterval(function(){			
@@ -186,49 +183,14 @@
 			if(scrTop<=0){clearInterval(Ttmer)}
 		},5)
 	}
-	
-	// 1280 样式文件及head
-	var new_css = document.createElement('link');
-	new_css.href = "css/index-1280.css";
-	new_css.rel = "stylesheet";
-	new_css.id = "c_1280";	
-	var head =document.getElementsByTagName('head')[0];
-	//超出1280全屏显示	
-	var main = document.getElementById('main');		
 
-	window.onresize = function(){
-		//超出1280全屏显示
-		max_screen()		
-		// 低于1280 还原缩放
-		reset_mian()
-	}
-	function max_screen(){
-		if(innerWidth>1280){
-			main.style.webkitTransform = 'scale(' + (innerWidth/(1280-24)) +')';
-			main.style.mozTransform = 'scale(' + (innerWidth/(1280-24)) +')';
-			main.style.msTransform = 'scale(' + (innerWidth/(1280-24)) +')';
-			main.style.Transform = 'scale(' + (innerWidth/(1280-24)) +')';
-			main.style.marginTop = -main.offsetTop + 'px';
-			document.body.style.overflowX = 'hidden';
-			console.log(main.offsetTop)
-			// 添加针对1280浏览器以上的兼容样式
-			var c1280 = document.getElementById('c_1280');			
-			if(c1280 == undefined){
-				head.appendChild(new_css)
-			}
-		}
-	}
-	// 低于1280 还原缩放
-	function reset_mian(){
-		if(innerWidth<=1280){
-			main.style.webkitTransform = '';
-			main.style.mozTransform = '';
-			main.style.msTransform = '';
-			main.style.Transform = '';
-			main.style.marginTop = -main.offsetTop + 'px';
-			document.body.style.overflowX = 'normal';
-			head.removeChild(new_css)
-		}
-	}
-	max_screen();
+	//需要全屏显示的话
+	// var main = document.getElementById('main');		
+	// if(innerWidth>1280){
+	// 	main.style.webkitTransform = 'scale(' + (innerWidth/1280) +')';
+	// 	main.style.mozTransform = 'scale(' + (innerWidth/1280) +')';
+	// 	main.style.msTransform = 'scale(' + (innerWidth/1280) +')';
+	// 	main.style.Transform = 'scale(' + (innerWidth/1280) +')';
+	// 	main.style.marginTop = -main.offsetTop + 'px';
+	// }
 }())
