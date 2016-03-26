@@ -126,7 +126,7 @@
 
 	prevBtn.onclick = function(){	
 		list_index--
-		if(list_index < 0 ){list_index = techBoxl-2 ;}
+		 if(list_index < 0 ){list_index = techBoxl-2 ;}
 		setMove(teachBox,-list_index*466)
 		clearInterval(play_l)
 	}
@@ -135,34 +135,34 @@
 		console.log(list_index)
 		list_index ++;
 		if(list_index > techBoxl-2){list_index = 0}	
-			setMove(teachBox,-list_index*466)
+		setMove(teachBox,-list_index*466)
 
 	}
-	function next_l(){		
-		list_index ++
-		if(list_index > techBoxl-2){list_index = 0}	
-			setMove(teachBox,-list_index*466)
-	}
-	bigBox.onmouseover = function(){
-		clearInterval(play_l)
-	}
-	bigBox.onmouseout = function(){
-		play_l = setInterval(next_l,3000)		
-	}
-	var play_l = setInterval(next_l,3000);
+function next_l(){		
+	list_index ++
+	if(list_index > techBoxl-2){list_index = 0}	
+		setMove(teachBox,-list_index*466)
+}
+bigBox.onmouseover = function(){
+	clearInterval(play_l)
+}
+bigBox.onmouseout = function(){
+	play_l = setInterval(next_l,3000)		
+}
+var play_l = setInterval(next_l,3000);
 
-	function setMove(ele,itarget){
-		clearInterval(listtimer);
-		listtimer = setInterval(function(){			
-			var speed = (itarget - ele.offsetLeft)/5;
-			speed= speed>0 ? Math.ceil(speed) : Math.floor(speed);
-			if (ele.offsetLeft == itarget){
-				clearInterval(listtimer);
-			}else{
-				ele.style.left = ele.offsetLeft + speed +'px';
-			}
-		},30)
-	}
+function setMove(ele,itarget){
+	clearInterval(listtimer);
+	listtimer = setInterval(function(){			
+		var speed = (itarget - ele.offsetLeft)/5;
+		speed= speed>0 ? Math.ceil(speed) : Math.floor(speed);
+		if (ele.offsetLeft == itarget){
+			clearInterval(listtimer);
+		}else{
+			ele.style.left = ele.offsetLeft + speed +'px';
+		}
+	},30)
+}
 
 	// top事件
 	var topbtn = document.getElementById('top');
@@ -184,6 +184,7 @@
 		},5)
 	}
 
+<<<<<<< HEAD
 	// 根据屏幕宽度获取背景图与banner图
 	// banner图片集合 banner_list
 
@@ -231,6 +232,8 @@
 		}
 	}
 
+=======
+>>>>>>> 4f69ba143d3c57bf71537c543690467d41f525ae
 	//需要全屏显示的话
 	// var main = document.getElementById('main');		
 	// if(innerWidth>1280){
@@ -240,5 +243,8 @@
 	// 	main.style.Transform = 'scale(' + (innerWidth/1280) +')';
 	// 	main.style.marginTop = -main.offsetTop + 'px';
 	// }
+<<<<<<< HEAD
 	
+=======
+>>>>>>> 4f69ba143d3c57bf71537c543690467d41f525ae
 }())
