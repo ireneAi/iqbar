@@ -183,16 +183,4 @@ function setMove(ele,itarget){
 			if(scrTop<=0){clearInterval(Ttmer)}
 		},5)
 	}
-
-
-
-	// 需要全屏显示的话
-	// var main = document.getElementById('main');		
-	// if(innerWidth>1280){
-	// 	main.style.webkitTransform = 'scale(' + (innerWidth/1280) +')';
-	// 	main.style.mozTransform = 'scale(' + (innerWidth/1280) +')';
-	// 	main.style.msTransform = 'scale(' + (innerWidth/1280) +')';
-	// 	main.style.Transform = 'scale(' + (innerWidth/1280) +')';
-	// 	main.style.marginTop = -main.offsetTop + 'px';
-	// }
 }())

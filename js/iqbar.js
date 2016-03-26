@@ -166,18 +166,15 @@
 
 	// top事件
 	var topbtn = document.getElementById('top');
-	window.onscroll =  function(){
-		// top判断 高于300显示隐藏
+	window.onscroll = function(){
 		var scrTop = document.body.scrollTop || document.documentElement.scrollTop;
 		if(scrTop>=300)	{
 			topbtn.style.display = "block";	
 		}
 		if(scrTop<=300)	{
 			topbtn.style.display = "none";	
-		}	
-		
+		}
 	}	
-	// 点击top回到顶部
 	topbtn.onclick = function(){
 		var scrTop= document.body.scrollTop || document.documentElement.scrollTop;
 		var Ttmer = setInterval(function(){			
@@ -186,49 +183,62 @@
 			if(scrTop<=0){clearInterval(Ttmer)}
 		},5)
 	}
-	
-	// 1280 样式文件及head
-	var new_css = document.createElement('link');
-	new_css.href = "css/index-1280.css";
-	new_css.rel = "stylesheet";
-	new_css.id = "c_1280";	
-	var head =document.getElementsByTagName('head')[0];
-	//超出1280全屏显示	
-	var main = document.getElementById('main');		
 
-	window.onresize = function(){
-		//超出1280全屏显示
-		max_screen()		
-		// 低于1280 还原缩放
-		reset_mian()
-	}
-	function max_screen(){
-		if(innerWidth>1280){
-			main.style.webkitTransform = 'scale(' + (innerWidth/(1280-24)) +')';
-			main.style.mozTransform = 'scale(' + (innerWidth/(1280-24)) +')';
-			main.style.msTransform = 'scale(' + (innerWidth/(1280-24)) +')';
-			main.style.Transform = 'scale(' + (innerWidth/(1280-24)) +')';
-			main.style.marginTop = -main.offsetTop + 'px';
-			document.body.style.overflowX = 'hidden';
-			console.log(main.offsetTop)
-			// 添加针对1280浏览器以上的兼容样式
-			var c1280 = document.getElementById('c_1280');			
-			if(c1280 == undefined){
-				head.appendChild(new_css)
-			}
-		}
-	}
-	// 低于1280 还原缩放
-	function reset_mian(){
+	// 根据屏幕宽度获取背景图与banner图
+	// banner图片集合 banner_list
+
+	var footer = document.querySelector("footer");
+	var becom_main = document.querySelector(".becom_main");
+	var Complete = document.querySelector(".Complete");
+	var list_teach = document.querySelector(".list_teach");
+	var inner = innerWidth;
+	function resize(){
 		if(innerWidth<=1280){
-			main.style.webkitTransform = '';
-			main.style.mozTransform = '';
-			main.style.msTransform = '';
-			main.style.Transform = '';
-			main.style.marginTop = -main.offsetTop + 'px';
-			document.body.style.overflowX = 'normal';
-			head.removeChild(new_css)
+			img_load(1280)		
+		}
+		if(innerWidth<=1440 && innerWidth>1280){		
+			img_load(1440)	
+		}
+		if(innerWidth<=1680 && innerWidth>1440){
+			img_load(1680)	
+		}
+		if(innerWidth<=1920 && innerWidth>1680){
+			img_load(1920)	
+		}
+		if(innerWidth<=2440 && innerWidth>1920){
+			img_load(2440)	
+		}
+
+	}
+	resize()
+	window.onresize = function (){
+		if(inner >= innerWidth){
+			return false
+		}else{
+			resize()
+			inner = innerWidth;
 		}
 	}
-	max_screen();
+	function img_load(width){
+		banner_list[0].src = "images/" + width + "/banner1.png";
+		banner_list[1].src = "images/" + width + "/banner2.png";
+		banner_list[2].src = "images/" + width + "/banner3.png";
+		becom_main.style.background = "url(images/" + width + "/be_come.png)  no-repeat center top";
+		Complete.style.background = 'url(images/' + width + '/complete.png) no-repeat  center top';
+		footer.style.background = '#ececec url(images/' + width + '/footer_background.png) no-repeat  center bottom';		
+		if(innerWidth>1570){
+			list_teach.style.background = '#ececec url(images/2440/list_teach.png) no-repeat  center top';
+		}
+	}
+
+	//需要全屏显示的话
+	// var main = document.getElementById('main');		
+	// if(innerWidth>1280){
+	// 	main.style.webkitTransform = 'scale(' + (innerWidth/1280) +')';
+	// 	main.style.mozTransform = 'scale(' + (innerWidth/1280) +')';
+	// 	main.style.msTransform = 'scale(' + (innerWidth/1280) +')';
+	// 	main.style.Transform = 'scale(' + (innerWidth/1280) +')';
+	// 	main.style.marginTop = -main.offsetTop + 'px';
+	// }
+	
 }())
